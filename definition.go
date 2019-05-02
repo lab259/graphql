@@ -586,6 +586,19 @@ type ResolveParams struct {
 
 type FieldResolveFn func(p ResolveParams) (interface{}, error)
 
+// Subscriber interface for future implementations of subscriber. (ex: Redis)
+type Subscriber interface {
+	SubscriberSubscribe(topic interface{}) error
+}
+
+// SubscribeParams Params for FieldSubscribeFn
+type SubscribeParams struct {
+	Data       interface{}
+	Subscriber Subscriber
+}
+
+type FieldSubscribeFn func(p SubscribeParams) error
+
 type ResolveInfo struct {
 	FieldName      string
 	FieldASTs      []*ast.Field
@@ -606,6 +619,7 @@ type Field struct {
 	Type              Output              `json:"type"`
 	Args              FieldConfigArgument `json:"args"`
 	Resolve           FieldResolveFn      `json:"-"`
+	Subscribe         FieldSubscribeFn    `json:"-"`
 	DeprecationReason string              `json:"deprecationReason"`
 	Description       string              `json:"description"`
 }
