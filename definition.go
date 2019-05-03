@@ -593,8 +593,11 @@ type Subscriber interface {
 
 // SubscribeParams Params for FieldSubscribeFn
 type SubscribeParams struct {
-	Data       interface{}
-	Subscriber Subscriber
+	SubscriptionID string
+	OperationName  string
+	Variables      map[string]interface{}
+	Data           interface{}
+	Subscriber     Subscriber
 }
 
 type FieldSubscribeFn func(p SubscribeParams) error
