@@ -634,12 +634,13 @@ type ArgumentConfig struct {
 
 type FieldDefinitionMap map[string]*FieldDefinition
 type FieldDefinition struct {
-	Name              string         `json:"name"`
-	Description       string         `json:"description"`
-	Type              Output         `json:"type"`
-	Args              []*Argument    `json:"args"`
-	Resolve           FieldResolveFn `json:"-"`
-	DeprecationReason string         `json:"deprecationReason"`
+	Name              string           `json:"name"`
+	Description       string           `json:"description"`
+	Type              Output           `json:"type"`
+	Args              []*Argument      `json:"args"`
+	Resolve           FieldResolveFn   `json:"-"`
+	Subscribe         FieldSubscribeFn `json:"-"`
+	DeprecationReason string           `json:"deprecationReason"`
 }
 
 type FieldArgument struct {
