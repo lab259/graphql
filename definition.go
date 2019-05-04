@@ -535,6 +535,7 @@ func defineFieldMap(ttype Named, fieldMap Fields) (FieldDefinitionMap, error) {
 			Type:              field.Type,
 			Resolve:           field.Resolve,
 			DeprecationReason: field.DeprecationReason,
+			Subscribe:         field.Subscribe,
 		}
 
 		fieldDef.Args = []*Argument{}
