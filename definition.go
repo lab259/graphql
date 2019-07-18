@@ -424,6 +424,9 @@ func (gt *Object) Description() string {
 func (gt *Object) String() string {
 	return gt.PrivateName
 }
+func (gt *Object) TypedConfig() ObjectConfig {
+	return gt.typeConfig
+}
 func (gt *Object) Fields() FieldDefinitionMap {
 	if gt.initialisedFields {
 		return gt.fields
