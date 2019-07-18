@@ -4,10 +4,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/graphql-go/graphql"
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/location"
-	"github.com/graphql-go/graphql/testutil"
+	"github.com/lab259/graphql"
+	"github.com/lab259/graphql/gqlerrors"
+	"github.com/lab259/graphql/language/location"
+	"github.com/lab259/graphql/testutil"
 )
 
 type testDog struct {

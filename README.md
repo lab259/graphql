@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/graphql-go/graphql"
+	"github.com/lab259/graphql"
 )
 
 func main() {
